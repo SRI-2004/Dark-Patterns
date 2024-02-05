@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="stylesheet" href="css/popup.css" type="text/css">
+
+    <script src="js/popup.js"></script>
+</head>
+
+<body>
+    <div class="modal-header">
+        <h1>
+            Dark Pattern Detector
+        </h1>
+        <p>
+            By Clocktantra
+        </p>
+    </div>
+    <div class="modal-content">
+        <div class="container">
+            <p class="label">Detected Dark Patterns</p>
+            <p class="Sneaking-number"></p>
+            <p class="Urgency-number"></p>
+            <p class="Misdirection-number"></p>
+            <p class="Social Proof-number"></p>
+            <p class="Scarcity-number"></p>
+            <p class="Obstruction-number"></p>
+            <p class="Forced Action-number"></p>
+            <p class="number"></p>
+        </div>
+        <button class="analyze-button" type="button">ANALYZE SITE</button>
+    </div>
+
+    <form id="feedbackForm">
+    <input type="text" id="feedbackInput" placeholder="Enter feedback">
+    <select id="patternDropdown">
+        <option value="" disabled selected>Select a pattern</option>
+    </select>
+    <button type="button" class="feedback">Submit Feedback</button>
+</form>
+
+
+    <div class="modal-footer">
+        <a class="link" href="https://darkpatterns.org">What are dark patterns?</a>
+    </div>
+</body>
+
+</html>

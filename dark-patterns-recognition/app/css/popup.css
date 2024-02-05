@@ -1,0 +1,140 @@
+html, body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    min-height: 180px;  /* Added 'px' unit */
+    width: 296px;
+    color: #FFFFFF;
+    background-color: gainsboro-;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+}
+
+button {
+    background-color: #FF9900;
+    border: none;
+    font-size: 18px;
+    padding: 14px 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transition: background-color 0.2s ease;
+    color: #FFFFFF;
+}
+
+button:active {
+    background-color: #FF9900;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #000048;
+    text-decoration: none;
+}
+
+.modal-header {
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 3px 2px 1px gainsboro;
+    background-color: #05283D;
+    padding: 3px;
+}
+
+.modal-content {
+    padding: 0px 16px 0px 16px;
+}
+
+.modal-footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px 3px 8px 3px;
+}
+
+.container {
+    background-color: #042538;
+    margin: 8px 0px 8px 0px;
+    padding: 6px 14px 6px 14px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 2px 1px #00131f;
+}
+
+.container p {
+    margin: 0px;
+}
+
+.label {
+    color: #B8B8B8;
+    margin: 0px;
+    font-weight: 150;
+}
+
+.number, .total-number {
+    color: #FFFFFF;
+    font-size: 32px;
+}
+
+.modal-footer a {
+    color: #D8D8D8;
+}
+
+.Sneaking-number,
+.Urgency-number,
+.Misdirection-number,
+.SocialProof-number,
+.Scarcity-number,
+.Obstruction-number,
+.ForcedAction-number {
+    color: #FFFFFF;
+    font-size: 20px; /* Adjust the font size as needed */
+    margin: 4px 0;
+}
+
+/* Your existing CSS styles */
+
+/* Style for the form */
+#feedbackForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+/* Style for the input field */
+#feedbackInput {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the dropdown */
+#patternDropdown {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the button */
+button {
+    padding: 10px;
+    background-color: #FF9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF9900;
+}
+
+/* Your existing CSS styles */
