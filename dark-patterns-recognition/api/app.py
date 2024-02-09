@@ -64,10 +64,10 @@ class Feedback(db.Model):
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Load models and tokenizers
-presence_tokenizer = load('/Dark-Patterns/dark-patterns-recognition/api/presence_tokenizer_distilbert.joblib')
-presence_model = load('/Dark-Patterns/dark-patterns-recognition/api/presence_classifier_distilbert.joblib')
-category_model = load('/Dark-Patterns/dark-patterns-recognition/api/category_classifier_bert.joblib')
-category_tokenizer = load('/Dark-Patterns/dark-patterns-recognition/api/category_tokenizer_bert.joblib')
+presence_tokenizer = load('dark-patterns-recognition/api/category_classifier.joblib')
+presence_model = load('dark-patterns-recognition/api/category_vectorizer.joblib')
+category_model = load('dark-patterns-recognition/api/presence_classifier.joblib')
+category_tokenizer = load('dark-patterns-recognition/api/presence_vectorizer.joblib')
 
 classes = ["Social Proof", "Misdirection", "Urgency", "Forced Action", "Obstruction", "Sneaking", "Scarcity"]
 blacklist = ['customer care', 'view more', 'stuffed animals','₹','$15.99','prime','subtotal','Brand','Model Name','Operating System','1 TB','secure transaction','en','add gift options','emi','all', ]

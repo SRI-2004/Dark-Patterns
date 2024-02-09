@@ -138,3 +138,26 @@ button:hover {
 }
 
 /* Your existing CSS styles */
+/* popup.css */
+.feedback-section {
+    display: flex;
+    align-items: center;
+}
+
+#feedbackBtn {
+    margin-right: 10px;
+}
+
+#feedbackForm {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#feedbackForm input[type="text"],
+#feedbackForm select {
+    margin-right: 10px;
+}
+
+#feedbackForm button {
+    margin-top: 5px;
+}

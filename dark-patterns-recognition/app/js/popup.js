@@ -10,13 +10,20 @@ window.onload = function () {
     });
   };
 
-  document.getElementsByClassName("link")[0].onclick = function () {
+  document.getElementsByClassName("link")[0].onclick = function (event) {
+    event.preventDefault(); // Prevent the default behavior of opening a new tab
     chrome.tabs.create({
       url: document.getElementsByClassName("link")[0].getAttribute("href"),
     });
   };
 
   populateDropdown("patternDropdown");
+
+  document.getElementById("feedbackBtn").onclick = function (event) {
+    event.preventDefault(); // Prevent the default behavior of opening a new tab
+    const feedbackForm = document.getElementById("feedbackForm");
+    feedbackForm.style.display = feedbackForm.style.display === 'none' ? 'block' : 'none';
+  };  
 
   document.getElementsByClassName("feedback")[0].onclick = function () {
     console.log("feedback click");
@@ -37,7 +44,7 @@ window.onload = function () {
         // Alert if feedback or pattern is not provided
         alert("Please enter feedback and select a pattern.");
     }
-};
+  };
 
 };
 
@@ -69,7 +76,6 @@ function updateDarkPatternCount(pattern, count) {
     }
   }
 }
-
 
 // Function to populate dropdown options
 function populateDropdown(dropdownId) {
