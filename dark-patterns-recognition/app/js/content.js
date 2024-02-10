@@ -70,7 +70,7 @@ function scrape() {
     });
 }
 function highlight(element, type) {
-  element.classList.add("insite-highlight");
+  element.classList.add("insite-highlight "+ type);
 
   let body = document.createElement("span");
   body.classList.add("insite-highlight-body");

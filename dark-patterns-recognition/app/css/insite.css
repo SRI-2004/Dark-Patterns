@@ -51,3 +51,115 @@
 	visibility: visible;
 	opacity: 1;
 }
+
+.insite-highlight:hover::after {
+    content: "Tooltip content here"; /* Replace with your tooltip content */
+    position: absolute;
+    top: 100%; /* Position the tooltip below the highlighted element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.Sneaking:hover::after {
+    content: "Coerces users to act in ways that they would not normally act by obscuring information.";
+    position: absolute;
+    top: 100%; /* Position the tooltip below the highlighted element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.Urgency:hover::after {
+    content: "Places deadlines on things to make them appear more desirable";
+   position: absolute;
+    top: 100%; /* Position the tooltip below the highlighted element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.Misdirection:hover::after {
+    content: "Aims to deceptively incline a user towards one choice over the other.";
+    position: absolute;
+    top: 100%; /* Position the tooltip below the highlighted element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.SocialProof:hover::after {
+    content: "Gives the perception that a given action or product has been approved by other people.";
+   position: absolute;
+    top: 100%; /* Position the tooltip below the highlighted element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.Scarcity:hover::after {
+    content: "Tries to increase the value of something by making it appear to be limited in availability.";
+   position: absolute;
+    top: 100%; /* Position the tooltip below the highlighted element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.Obstruction:hover::after {
+    content: "Tries to make an action more difficult so that a user is less likely to do that action.";
+   position: absolute;
+    top: 100%; /* Position the tooltip below the highlighted element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.ForcedAction:hover::after {
+    content: "Forces a user to complete extra, unrelated tasks to do something that should be simple.";
+    position: absolute;
+    top: 100%; /* Position the tooltip below the highlighted element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
