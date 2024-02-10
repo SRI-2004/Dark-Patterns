@@ -58,12 +58,14 @@
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 10px;
     white-space: nowrap;
+    
+    z-index : 9999;
 }
 
 .Sneaking:hover::after {
@@ -72,12 +74,14 @@
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 10px;
     white-space: nowrap;
+    
+    z-index : 9999;
 }
 
 .Urgency:hover::after {
@@ -86,12 +90,14 @@
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 10px;
     white-space: nowrap;
+    
+    z-index : 9999;
 }
 
 .Misdirection:hover::after {
@@ -100,12 +106,14 @@
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 10px;
     white-space: nowrap;
+    
+    z-index : 9999;
 }
 
 .SocialProof:hover::after {
@@ -114,12 +122,14 @@
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 10px;
     white-space: nowrap;
+    
+    z-index : 9999;
 }
 
 .Scarcity:hover::after {
@@ -128,12 +138,14 @@
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 10px;
     white-space: nowrap;
+    
+    z-index : 9999;
 }
 
 .Obstruction:hover::after {
@@ -142,12 +154,14 @@
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 10px;
     white-space: nowrap;
+    
+    z-index : 9999;
 }
 
 .ForcedAction:hover::after {
@@ -156,10 +170,12 @@
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 10px;
     white-space: nowrap;
+    
+    z-index : 9999;
 }
