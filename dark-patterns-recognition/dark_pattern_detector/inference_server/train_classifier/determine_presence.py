@@ -1,3 +1,4 @@
+import joblib
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.metrics import f1_score, roc_curve, auc
@@ -69,7 +70,7 @@ df = pd.concat([df1, df2])
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(
-    df['Pattern String'], df["classification"], train_size=0.95)
+    df['Pattern String'], df["classification"], train_size=0.3)
 
 # Tokenizer and Model
 tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
@@ -120,7 +121,7 @@ train_losses = []
 train_accuracies = []
 train_f1_scores = []
 
-for epoch in range(5):
+for epoch in range(3):
     model.train()
     total_loss = 0.0
     correct_predictions = 0
@@ -195,7 +196,6 @@ plt.title('Receiver Operating Characteristic (ROC) Curve')
 plt.legend(loc='lower right')
 plt.show()
 
-import torch
+joblib.dump(model, 'models/presence_classifier_distilbert.joblib')
+joblib.dump(tokenizer, 'models/presence_tokenizer_distilbert.joblib')
 
-# Assuming `model` is your PyTorch model
-torch.save(model.state_dict(), 'presence_model.pth')

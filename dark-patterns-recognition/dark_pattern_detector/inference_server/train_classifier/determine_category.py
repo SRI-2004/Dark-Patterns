@@ -61,7 +61,7 @@ df["category_id"], class_labels = df[selected_classification].factorize()
 
 # Train-Test Split
 X_train, X_test, y_train, y_test = train_test_split(
-    df['Pattern String'], df['category_id'], train_size=0.95)
+    df['Pattern String'], df['category_id'], train_size=0.3)
 
 # Tokenizer
 tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
@@ -110,7 +110,7 @@ train_losses = []
 train_accuracies = []
 
 # Training Loop
-for epoch in range(10):
+for epoch in range(3):
     model.train()
     total_loss = 0.0
     correct_predictions = 0
@@ -209,5 +209,5 @@ f1 = f1_score(y_test_array, all_preds_array, average='weighted')
 print("F1 Score:", f1)
 
 # Save the fine-tuned model
-joblib.dump(model, '../api/category_classifier_bert.joblib')
-joblib.dump(tokenizer, '../api/category_tokenizer_bert.joblib')
+joblib.dump(model, 'models/category_classifier_bert.joblib')
+joblib.dump(tokenizer, 'models/category_tokenizer_bert.joblib')

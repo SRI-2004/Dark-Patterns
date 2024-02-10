@@ -8,10 +8,10 @@ import torch
 
 from .models import DetectionResult
 
-presence_tokenizer = load('/home/srinivasan/Desktop/dark-patterns-recognition/dark-patterns-recognition/api/presence_tokenizer_distilbert.joblib')
-presence_model = load('/home/srinivasan/Desktop/dark-patterns-recognition/dark-patterns-recognition/api/presence_classifier_distilbert.joblib')
-category_model = load('/home/srinivasan/Desktop/dark-patterns-recognition/dark-patterns-recognition/api/category_classifier_bert.joblib')
-category_tokenizer = load('/home/srinivasan/Desktop/dark-patterns-recognition/dark-patterns-recognition/api/category_tokenizer_bert.joblib')
+presence_tokenizer = load('/home/srinivasan/Desktop/Dark-Patterns/dark-patterns-recognition/dark_pattern_detector/inference_server/train_classifier/models/presence_tokenizer_distilbert.joblib')
+presence_model = load('/home/srinivasan/Desktop/Dark-Patterns/dark-patterns-recognition/dark_pattern_detector/inference_server/train_classifier/models/presence_classifier_distilbert.joblib')
+category_model = load('/home/srinivasan/Desktop/Dark-Patterns/dark-patterns-recognition/dark_pattern_detector/inference_server/train_classifier/models/category_classifier_bert.joblib')
+category_tokenizer = load('/home/srinivasan/Desktop/Dark-Patterns/dark-patterns-recognition/dark_pattern_detector/inference_server/train_classifier/models/category_tokenizer_bert.joblib')
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
@@ -61,7 +61,7 @@ def main(request: HttpRequest):
                     # Get the predicted class and its corresponding confidence score
                     predicted_class = torch.argmax(probabilities).item()
                     confidence_score = probabilities[predicted_class].item()
-                    print(token, classes[predicted_class], confidence_score)
+                    # print(token, classes[predicted_class], confidence_score)
                     # Set a confidence threshold for category classification
                     category_confidence_threshold = 0
                     class_value = classes[predicted_class]
