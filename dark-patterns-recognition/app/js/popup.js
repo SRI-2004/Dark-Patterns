@@ -19,32 +19,80 @@ window.onload = function () {
 
   populateDropdown("patternDropdown");
 
-  document.getElementById("feedbackBtn").onclick = function (event) {
-    event.preventDefault(); // Prevent the default behavior of opening a new tab
+  function toggleFeedbackForm() {
     const feedbackForm = document.getElementById("feedbackForm");
     feedbackForm.style.display = feedbackForm.style.display === 'none' ? 'block' : 'none';
+    
+    const feedbackBtn = document.getElementById("feedbackBtn");
+    feedbackBtn.innerText = feedbackBtn.innerText === 'Feedback' ? 'Close Feedback' : 'Feedback';
+}
+
+  document.getElementById("feedbackBtn").onclick = function (event) {
+    event.preventDefault(); // Prevent the default behavior of opening a new tab
+    toggleFeedbackForm();
   };  
 
-  document.getElementsByClassName("feedback")[0].onclick = function () {
+document.getElementsByClassName("feedback")[0].onclick = function () {
     console.log("feedback click");
     const feedbackValue = document.getElementById("feedbackInput").value;
     const selectedPattern = document.getElementById("patternDropdown").value;
-    if (feedbackValue && selectedPattern) {
+    const feedbackTypeButtons = document.querySelectorAll('[name="feedbackType"]');
+    let feedbackType;
+
+    // Loop through the buttons to find the one that is clicked
+    feedbackTypeButtons.forEach(button => {
+        if (button.classList.contains('selected')) {
+            feedbackType = button.value;
+        }
+    });
+
+    if (feedbackValue && selectedPattern && feedbackType) {
         chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, { message: "feedback", feedbackValue: feedbackValue, selectedPattern: selectedPattern });
+            chrome.tabs.sendMessage(tabs[0].id, {
+                message: "feedback",
+                feedbackValue: feedbackValue,
+                selectedPattern: selectedPattern,
+                feedbackType: feedbackType
+            });
         });
 
         // Clear input fields
         document.getElementById("feedbackInput").value = "";
         document.getElementById("patternDropdown").value = "";
 
+        // Remove selection from buttons
+        feedbackTypeButtons.forEach(button => {
+            button.classList.remove('selected');
+        });
+
         // Alert to the user
+        toggleFeedbackForm()
         alert("Feedback received successfully!");
     } else {
-        // Alert if feedback or pattern is not provided
-        alert("Please enter feedback and select a pattern.");
+        // Alert if feedback, pattern, or feedback type is not provided
+        alert("Please enter feedback, select a pattern, and choose feedback type.");
     }
-  };
+};
+
+
+
+
+// Add event listeners to the buttons to toggle the selection
+document.querySelectorAll('[name="feedbackType"]').forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove blue background color from all buttons
+        document.querySelectorAll('[name="feedbackType"]').forEach(btn => {
+            btn.style.backgroundColor = ''; // Reset background color
+            btn.classList.remove('selected');
+        });
+        // Set blue background color to the clicked button
+        this.style.backgroundColor = 'grey';
+        this.classList.add('selected');
+    });
+});
+
+
+
 
 };
 
@@ -99,3 +147,11 @@ function populateDropdown(dropdownId) {
         dropdown.add(optionElement);
     });
 }
+
+
+document.getElementById("analyze-button").onclick = function (event) {
+    event.preventDefault(); // Prevent the default behavior of opening a new tab
+    const darkpatterncontainer = document.getElementById("container");
+    darkpatterncontainer.style.display = darkpatterncontainer.style.display === 'none' ? 'block' : 'none';
+    
+  }; 

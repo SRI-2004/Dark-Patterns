@@ -2,10 +2,12 @@ html, body {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     margin: 0;
-    min-height: 180px;  /* Added 'px' unit */
-    width: 296px;
+    
+    min-height: 180px;
+    width: 300px;
     color: #FFFFFF;
-    background-color: gainsboro-;
+    background: linear-gradient(to top, black, white); /* Gradient background from black to white */
+    overflow: hidden; /* Add this line to hide scrollbar */
 }
 
 h1 {
@@ -26,30 +28,37 @@ button {
     margin: 10px 0;
     border-radius: 5px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 90%;
     transition: background-color 0.2s ease;
     color: #FFFFFF;
 }
 
 button:active {
-    background-color: #FF9900;
+    background-color: #0a0a0a;
 }
 
 a:link, a:visited, a:hover, a:active {
-    color: #000048;
+    color: white;
     text-decoration: none;
+    font-size: large;
 }
 
 .modal-header {
     align-items: center;
     text-align: center;
-    box-shadow: 0px 3px 2px 1px gainsboro;
-    background-color: #05283D;
+    font-weight: bold;
+    color: black;
+  
+    
     padding: 3px;
 }
 
 .modal-content {
     padding: 0px 16px 0px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
 }
 
 .modal-footer {
@@ -59,11 +68,11 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .container {
-    background-color: #042538;
+ background-color: black;
     margin: 8px 0px 8px 0px;
     padding: 6px 14px 6px 14px;
     border-radius: 3px;
-    box-shadow: 0px 3px 2px 1px #00131f;
+    box-shadow: 0px 3px 2px 1px black;
 }
 
 .container p {
@@ -81,9 +90,7 @@ a:link, a:visited, a:hover, a:active {
     font-size: 32px;
 }
 
-.modal-footer a {
-    color: #D8D8D8;
-}
+
 
 .Sneaking-number,
 .Urgency-number,
@@ -126,15 +133,16 @@ a:link, a:visited, a:hover, a:active {
 /* Style for the button */
 button {
     padding: 10px;
-    background-color: #FF9900;
+    background-color: #000000;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #FF9900;
+    background-color: white;
+    color : black
 }
 
 /* Your existing CSS styles */
@@ -144,20 +152,39 @@ button:hover {
     align-items: center;
 }
 
-#feedbackBtn {
-    margin-right: 10px;
-}
 
 #feedbackForm {
     display: flex;
     flex-wrap: wrap;
 }
 
-#feedbackForm input[type="text"],
+#feedbackForm input[type="text"]{
+    width: 100vh;
+}
+
 #feedbackForm select {
     margin-right: 10px;
 }
 
 #feedbackForm button {
     margin-top: 5px;
+}
+
+.feedback-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.feedbacktypeContainer{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.link{
+    color: white;
 }
