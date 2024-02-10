@@ -194,6 +194,8 @@ plt.ylabel('True Positive Rate')
 plt.title('Receiver Operating Characteristic (ROC) Curve')
 plt.legend(loc='lower right')
 plt.show()
-# Save the fine-tuned model and tokenizer
-dump(model, '../api/presence_classifier_distilbert.joblib')
-dump(tokenizer, '../api/presence_tokenizer_distilbert.joblib')
+
+import torch
+
+# Assuming `model` is your PyTorch model
+torch.save(model.state_dict(), 'presence_model.pth')

@@ -18,7 +18,7 @@ from sklearn.linear_model import SGDClassifier, LogisticRegression
 device = "cuda"
 # Read data
 df1 = pd.read_csv('normie.csv')
-df2 = pd.read_csv('dark_patterns.csv')
+df2 = pd.read_csv('dark_patterns_new.csv')
 
 df1 = df1[pd.notnull(df1["Pattern String"])]
 df1 = df1[df1["classification"] == 0]
@@ -40,9 +40,9 @@ X_train_counts = count_vect.fit_transform(X_train)
 tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 # Tokenizer and Model
-tokenizer = load("presence_tokenizer_distilbert.joblib")
+tokenizer = load("../api/presence_tokenizer_distilbert.joblib")
 # Load your pre-trained DistilBERT model
-distilbert_model = load('presence_classifier_distilbert.joblib')
+distilbert_model = load('../api/presence_classifier_distilbert.joblib')
 
 # Tokenize and encode the testing data for DistilBERT
 test_encodings_distilbert = tokenizer(list(X_test), truncation=True, padding=True)

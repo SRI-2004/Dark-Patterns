@@ -51,7 +51,7 @@ class ClassificationHead(nn.Module):
 
 # Data Input
 selected_classification = "Pattern Category"
-df = pd.read_csv('dark_patterns.csv')
+df = pd.read_csv('merged_file.csv')
 
 # Data Preprocessing
 df = df[pd.notnull(df["Pattern String"])]
@@ -110,7 +110,7 @@ train_losses = []
 train_accuracies = []
 
 # Training Loop
-for epoch in range(5        ):
+for epoch in range(10):
     model.train()
     total_loss = 0.0
     correct_predictions = 0

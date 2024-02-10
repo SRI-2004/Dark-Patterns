@@ -1,4 +1,4 @@
-const endpoint = "http:/127.0.0.1:5000/";
+const endpoint = "http:/127.0.0.1:8000/inference_server/";
 const descriptions = {
   "Sneaking": "Coerces users to act in ways that they would not normally act by obscuring information.",
   "Urgency": "Places deadlines on things to make them appear more desirable",
@@ -18,6 +18,7 @@ function scrape() {
   let elements = segments(document.body);
   let filtered_elements = [];
   let patternCounts = {};
+  let siteUrl = window.location.href;
 
   for (let i = 0; i < elements.length; i++) {
     let text = elements[i].innerText.trim().replace(/\t/g, " ");
@@ -28,10 +29,10 @@ function scrape() {
   }
 
   // post to the web server
-  fetch(endpoint, {
+  fetch(endpoint+'main/', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ tokens: filtered_elements }),
+    body: JSON.stringify({ tokens: filtered_elements,site_url: siteUrl }),
   })
     .then((resp) => resp.json())
     .then((data) => {
@@ -116,10 +117,11 @@ function sendDarkPatterns(counts) {
 const send_feedback = (feedbackValue, selectedPattern) => {
   const feedbackData = {
       feedback: feedbackValue,
-      pattern: selectedPattern
+      pattern: selectedPattern,
+      site_url: window.location.href
   };
 
-  fetch("http://127.0.0.1:5000/feedback", {
+  fetch(endpoint + "feedback/", {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
