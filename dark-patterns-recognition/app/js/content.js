@@ -81,7 +81,6 @@ function scrape() {
       console.error(error.stack);
     });
 }
-
 function highlight(element, type) {
   element.classList.add("insite-highlight");
 
@@ -91,9 +90,6 @@ function highlight(element, type) {
     // Add the modified type to the class list of the element
     element.classList.add(tempType);
   }
-
-  let body = document.createElement("span");
-  body.classList.add("insite-highlight-body");
 
   // Define background colors for each dark pattern count
   const backgroundColors = {
@@ -107,7 +103,6 @@ function highlight(element, type) {
   };
 
   // Set background color based on the dark pattern type
-  body.style.background = backgroundColors[type];
   element.style.background = backgroundColors[type];
 
   // Add event listeners for mouseover and mouseout events
@@ -118,24 +113,6 @@ function highlight(element, type) {
   element.addEventListener("mouseout", function () {
     hidePopup();
   });
-
-  let description = descriptions[type];
-
-  /* header */
-  let header = document.createElement("div");
-  header.classList.add("modal-header");
-  let headerText = document.createElement("h1");
-  headerText.innerHTML = type + " Pattern";
-  header.appendChild(headerText);
-  body.appendChild(header);
-
-  /* content */
-  let content = document.createElement("div");
-  content.classList.add("modal-content");
-  content.innerHTML = description;
-  body.appendChild(content);
-
-  element.appendChild(body);
 }
 
 function showPopup(type) {

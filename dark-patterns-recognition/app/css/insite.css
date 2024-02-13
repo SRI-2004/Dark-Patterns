@@ -69,7 +69,7 @@
 }
 
 .Sneaking:hover::after {
-    content: "Coerces users to act in ways that they would not normally act by obscuring information.";
+    content: "Sneaking";
     position: absolute;
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
@@ -85,7 +85,7 @@
 }
 
 .Urgency:hover::after {
-    content: "Places deadlines on things to make them appear more desirable";
+    content: "Urgency";
    position: absolute;
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
@@ -101,7 +101,7 @@
 }
 
 .Misdirection:hover::after {
-    content: "Aims to deceptively incline a user towards one choice over the other.";
+    content: "Midsirection";
     position: absolute;
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
@@ -117,7 +117,7 @@
 }
 
 .SocialProof:hover::after {
-    content: "Gives the perception that a given action or product has been approved by other people.";
+    content: "Social Proof";
    position: absolute;
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
@@ -133,7 +133,7 @@
 }
 
 .Scarcity:hover::after {
-    content: "Tries to increase the value of something by making it appear to be limited in availability.";
+    content: "Scaricity";
    position: absolute;
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
@@ -144,12 +144,11 @@
     border-radius: 5px;
     font-size: 10px;
     white-space: nowrap;
-    
     z-index : 9999;
 }
 
 .Obstruction:hover::after {
-    content: "Tries to make an action more difficult so that a user is less likely to do that action.";
+    content: "Obstruction";
    position: absolute;
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
@@ -165,7 +164,7 @@
 }
 
 .ForcedAction:hover::after {
-    content: "Forces a user to complete extra, unrelated tasks to do something that should be simple.";
+    content: "Forced Action";
     position: absolute;
     top: 100%; /* Position the tooltip below the highlighted element */
     left: 50%; /* Center the tooltip horizontally */
