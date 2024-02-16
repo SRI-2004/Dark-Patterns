@@ -47,26 +47,8 @@
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
-.insite-highlight:hover .insite-highlight-body {
-	visibility: visible;
-	opacity: 1;
-}
 
-.insite-highlight:hover::after {
-    content: "Tooltip content here"; /* Replace with your tooltip content */
-    position: absolute;
-    top: 100%; /* Position the tooltip below the highlighted element */
-    left: 50%; /* Center the tooltip horizontally */
-    transform: translateX(-50%); /* Adjust for center alignment */
-    background-color: rgba(0, 0, 0, 1);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 10px;
-    white-space: nowrap;
-    
-    z-index : 9999;
-}
+
 
 .Sneaking:hover::after {
     content: "Sneaking";

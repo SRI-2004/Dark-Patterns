@@ -1,0 +1,7 @@
+
+*.joblib
+*.pyc
+*.db
+*.db
+instance/feedbacks.db
+instance/feedbacks.db
