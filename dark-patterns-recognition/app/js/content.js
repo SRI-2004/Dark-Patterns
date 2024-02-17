@@ -235,3 +235,33 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log(request);
   }
 });
+
+
+
+function checkAndUncheckCheckboxes() {
+    // Find all checkboxes on the page
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    
+    if (checkboxes.length === 0) {
+        // No checkboxes found
+        alert("No checkboxes found on this page.");
+        return;
+    }
+    
+    // Confirm with the user if they want to uncheck all checkboxes
+    const confirmation = confirm("Found " + checkboxes.length + " checkboxes on this page. Do you want to uncheck all of them?");
+    
+    if (confirmation) {
+        // User confirmed, uncheck all checkboxes
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        alert("All checkboxes have been unchecked.");
+    } else {
+        // User canceled, do nothing
+        alert("Operation canceled. Checkboxes remain unchanged.");
+    }
+}
+
+// Call the function when the content script is executed
+checkAndUncheckCheckboxes();
