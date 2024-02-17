@@ -16,7 +16,7 @@ const descriptions = {
 };
 
 function scrape() {
-  console.log("scrapping")
+  console.log("scrapping");
   // aggregate all DOM elements on the page
   let elements = segments(document.body);
   let filtered_elements = [];
@@ -52,18 +52,17 @@ function scrape() {
       let dp_counts = {}; // To store counts for each pattern
       let element_index = 0;
       let text;
-     for (let i = 0; i < filtered_elements_data.length; i++) {
-    let element = filtered_elements_data[i];
-    if (element.innerText) {
-        let text = element.innerText.trim().replace(/\t/g, " ");
-        if (text.length > 0 && json.result[i] !== "Not Dark") {
+      for (let i = 0; i < filtered_elements_data.length; i++) {
+        let element = filtered_elements_data[i];
+        if (element.innerText) {
+          let text = element.innerText.trim().replace(/\t/g, " ");
+          if (text.length > 0 && json.result[i] !== "Not Dark") {
             dp_counts[json.result[i]] = (dp_counts[json.result[i]] || 0) + 1;
-            console.log(element, json.result[i])
+            console.log(element, json.result[i]);
             highlight(element, json.result[i]);
+          }
         }
-    }
-}
-
+      }
 
       // store counts of dark patterns
       let g = document.createElement("div");
@@ -236,32 +235,106 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
 });
 
-
-
 function checkAndUncheckCheckboxes() {
-    // Find all checkboxes on the page
+  let confirmed = false; // Flag to track if confirmation has been shown
+
+  // Function to uncheck all checkboxes
+  function uncheckAllCheckboxes() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     
-    if (checkboxes.length === 0) {
-        // No checkboxes found
-        alert("No checkboxes found on this page.");
-        return;
-    }
-    
-    // Confirm with the user if they want to uncheck all checkboxes
-    const confirmation = confirm("Found " + checkboxes.length + " checkboxes on this page. Do you want to uncheck all of them?");
-    
-    if (confirmation) {
-        // User confirmed, uncheck all checkboxes
-        checkboxes.forEach(function(checkbox) {
-            checkbox.checked = false;
-        });
-        alert("All checkboxes have been unchecked.");
+    // If confirmation has not been shown yet, or if the user confirmed previously
+    if (!confirmed || confirm("Do you want to remove all checkboxes?")) {
+      checkboxes.forEach(function (checkbox) {
+        checkbox.checked = false;
+      });
+      confirmed = true;
+      alert("All checkboxes have been unchecked.");
+       // Set the flag to true after confirmation
     } else {
-        // User canceled, do nothing
-        alert("Operation canceled. Checkboxes remain unchanged.");
+      alert("Operation canceled. Checkboxes remain unchanged.");
     }
+  }
+
+  // Initial check when the function is called
+  uncheckAllCheckboxes();
+
+  // Mutation Observer to watch for changes in the DOM
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+        mutation.addedNodes.forEach(function (node) {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            // Check if the added node has any child checkboxes
+            const childCheckboxes = node.querySelectorAll('input[type="checkbox"]');
+            if (childCheckboxes.length > 0) {
+              uncheckAllCheckboxes(); // Trigger the action
+            }
+          }
+        });
+      }
+    });
+  });
+
+  // Configuration of the observer
+  const config = { childList: true, subtree: true };
+
+  // Start observing the body for changes
+  observer.observe(document.body, config);
 }
+
 
 // Call the function when the content script is executed
 checkAndUncheckCheckboxes();
+
+
+function checkForWordsInInputs(words) {
+  let alertShown = false; // Flag to track if alert has been shown
+
+  // Function to check if a word from the array is present in the placeholder value
+  function checkInputsForWords(node) {
+    const inputs = node.querySelectorAll("input[placeholder]");
+    inputs.forEach((input) => {
+      const placeholder = input.getAttribute("placeholder");
+      if (placeholder) {
+        const wordsFound = words.filter((word) =>
+          placeholder.toLowerCase().includes(word)
+        );
+        if (wordsFound.length > 0 && !alertShown) {
+          alertShown = true; // Set the flag to true
+          alert(
+            "The placeholder of an input field contains one of the provided words: " +
+              wordsFound.join(", ")
+          );
+        }
+      }
+    });
+  }
+
+  // Initial check when the function is called
+  checkInputsForWords(document.body);
+
+  // Mutation Observer to watch for changes in the DOM
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+        mutation.addedNodes.forEach(function (node) {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            checkInputsForWords(node);
+          }
+        });
+      }
+    });
+  });
+
+  // Configuration of the observer
+  const config = { childList: true, subtree: true };
+
+  // Start observing the body for changes
+  observer.observe(document.body, config);
+}
+
+
+
+// Example usage:
+const wordsToCheck = ["Username", "email"]; // Array of words to check
+checkForWordsInInputs(wordsToCheck);
