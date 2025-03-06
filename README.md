@@ -3,10 +3,10 @@
 ## **Project Recognition**  
 - 🏆 **Finalist at Dark Patterns Buster Hackathon (IIT BHU, Ministry of Consumer Affairs, GOI)**  
 - Built in collaboration with:  
-  - **[Vishruth R](https://github.com/vishruth-r)**  
-  - **[Anirudh Arcot](https://github.com/cr4z4x)**
-  - **[Devangana Ghosh](https://github.com/Devangana-Ghosh)**
-  - **[Aahanaa Sharrma](https://github.com/aahanaasharrma)**    
+  - **[Vishruth-R](https://github.com/vishruth-r)**  
+  - **[Anirudh-Arcot](https://github.com/cr4z4x)**
+  - **[Devangana-Ghosh](https://github.com/Devangana-Ghosh)**
+  - **[Aahanaa-Sharrma](https://github.com/aahanaasharrma)**    
 
 ---
 
