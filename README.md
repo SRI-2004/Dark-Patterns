@@ -1,3 +1,6 @@
+
+# **Dark Patterns Detector: AI-Powered Identification of Deceptive UI/UX Practices**  
+
 ## **Project Recognition**  
 - 🏆 **Finalist at Dark Patterns Buster Hackathon (IIT BHU, Ministry of Consumer Affairs, GOI)**  
 - Built in collaboration with:  
@@ -6,11 +9,7 @@
   - **[Devangana-Ghosh](https://github.com/Devangana-Ghosh)**
   - **[Aahanaa-Sharrma](https://github.com/aahanaasharrma)**    
 
----
 
-# **Dark Patterns Detector: AI-Powered Identification of Deceptive UI/UX Practices**  
-
-🏆 **Finalist at Dark Patterns Buster Hackathon (IIT BHU, Ministry of Consumer Affairs, GOI)**  
 
 ## **Overview**  
 Dark patterns are **deceptive UI/UX practices** that manipulate users into making unintended choices. This project leverages **NLP-based deep learning models** to **detect and classify dark patterns** in textual descriptions and website interactions.  
