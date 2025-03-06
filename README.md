@@ -1,5 +1,3 @@
----
-
 ## **Project Recognition**  
 - 🏆 **Finalist at Dark Patterns Buster Hackathon (IIT BHU, Ministry of Consumer Affairs, GOI)**  
 - Built in collaboration with:  
